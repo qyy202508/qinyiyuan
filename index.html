@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>秦颐园文旅综合体 - 传承文化，体验生活</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#9B2226', // 中国红，体现文化底蕴
+                        secondary: '#BB9457', // 金色，体现高贵与传统
+                        tertiary: '#4338CA', // 深蓝色，体现现代感
+                        neutral: '#F5F5F4', // 米白色，作为背景
+                        dark: '#1C1917', // 深棕色，用于文字
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        serif: ['"Noto Serif SC"', 'serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            }
+            .bg-blur {
+                backdrop-filter: blur(8px);
+            }
+            .scroll-smooth {
+                scroll-behavior: smooth;
+            }
+            .section-fade {
+                opacity: 0;
+                transform: translateY(20px);
+                transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            }
+            .section-fade.active {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-neutral text-dark font-sans scroll-smooth">
+    <!-- 导航栏 -->
+    <header id="navbar" class="fixed w-full z-50 transition-all duration-300">
+        <nav class="bg-dark/80 bg-blur text-white py-4 px-6 md:px-12">
+            <div class="container mx-auto flex justify-between items-center">
+                <a href="#" class="flex items-center space-x-2">
+                    <i class="fa fa-map-marker text-secondary text-2xl"></i>
+                    <span class="font-serif text-xl md:text-2xl font-bold">秦颐园</span>
+                </a>
+                
+                <!-- 桌面导航 -->
+                <ul class="hidden md:flex space-x-8">
+                    <li><a href="#overview" class="hover:text-secondary transition-colors">项目概述</a></li>
+                    <li><a href="#goals" class="hover:text-secondary transition-colors">核心目标</a></li>
+                    <li><a href="#positioning" class="hover:text-secondary transition-colors">市场定位</a></li>
+                    <li><a href="#projects" class="hover:text-secondary transition-colors">主要项目</a></li>
+                    <li><a href="#surroundings" class="hover:text-secondary transition-colors">周边资源</a></li>
+                </ul>
+                
+                <!-- 移动端菜单按钮 -->
+                <button id="menu-toggle" class="md:hidden text-white focus:outline-none">
+                    <i class="fa fa-bars text-xl"></i>
+                </button>
+            </div>
+            
+            <!-- 移动端导航菜单 -->
+            <div id="mobile-menu" class="md:hidden hidden mt-4 pb-2">
+                <ul class="space-y-3">
+                    <li><a href="#overview" class="block hover:text-secondary transition-colors">项目概述</a></li>
+                    <li><a href="#goals" class="block hover:text-secondary transition-colors">核心目标</a></li>
+                    <li><a href="#positioning" class="block hover:text-secondary transition-colors">市场定位</a></li>
+                    <li><a href="#projects" class="block hover:text-secondary transition-colors">主要项目</a></li>
+                    <li><a href="#surroundings" class="block hover:text-secondary transition-colors">周边资源</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 英雄区域 -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://picsum.photos/id/1036/1920/1080" alt="秦颐园文旅综合体景观" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-dark/50"></div>
+        </div>
+        <div class="container mx-auto px-6 relative z-10 text-center">
+            <h1 class="font-serif text-[clamp(2.5rem,8vw,5rem)] font-bold text-white mb-6 leading-tight text-shadow">
+                秦颐园文旅综合体
+            </h1>
+            <p class="text-[clamp(1rem,3vw,1.5rem)] text-white/90 max-w-3xl mx-auto mb-10 text-shadow">
+                在历史文脉与现代活力交织的土地上，绽放独特光彩
+            </p>
+            <a href="#overview" class="inline-block bg-primary hover:bg-primary/90 text-white font-medium py-3 px-8 rounded-full transition-all transform hover:scale-105 hover:shadow-lg">
+                了解更多 <i class="fa fa-arrow-down ml-2"></i>
+            </a>
+        </div>
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+            <i class="fa fa-angle-down text-3xl"></i>
+        </div>
+    </section>
+
+    <!-- 项目概述 -->
+    <section id="overview" class="py-20 px-6 bg-white section-fade">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-[clamp(1.8rem,5vw,3rem)] font-bold mb-4">项目概述</h2>
+                <div class="w-24 h-1 bg-primary mx-auto"></div>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <p class="text-lg leading-relaxed mb-8">
+                    在历史文脉与现代活力交织的土地上，秦颐园文旅综合体正以独特的姿态绽放光彩。这里不仅是文化传承的沃土，更是多元生活的舞台 —— 非遗技艺在此焕发新生，特色美食传递地域风情，精品住宿融入文化韵味，便捷服务满足多样需求。
+                </p>
+                <p class="text-lg leading-relaxed">
+                    依托周边富集的历史文化资源，秦颐园将文化、旅游、商业、办公等功能有机融合，致力于成为一站式生活体验中心与区域文化旅游新地标，让每一位到访者在光影流转间，触摸历史温度，感受现代活力。
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+                <div class="bg-neutral p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa fa-university text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold mb-3">文化传承</h3>
+                    <p>非遗技艺展示与传承，让传统文化在现代生活中焕发新的生命力</p>
+                </div>
+                
+                <div class="bg-neutral p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa fa-map-signs text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold mb-3">旅游体验</h3>
+                    <p>融合多元旅游资源，打造独特的文化旅游体验，满足不同游客需求</p>
+                </div>
+                
+                <div class="bg-neutral p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa fa-users text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold mb-3">生活服务</h3>
+                    <p>一站式生活服务平台，涵盖餐饮、住宿、办公等全方位需求</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 核心目标 -->
+    <section id="goals" class="py-20 px-6 bg-neutral section-fade">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-[clamp(1.8rem,5vw,3rem)] font-bold mb-4">项目核心目标</h2>
+                <div class="w-24 h-1 bg-primary mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+                <div class="flex">
+                    <div class="mr-6 flex-shrink-0">
+                        <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold text-xl">1</div>
+                    </div>
+                    <div>
+                        <h3 class="font-serif text-xl font-bold mb-3">构建多元融合的文旅商业综合体</h3>
+                        <p>有机整合文化、旅游、商业、办公及生活服务功能，全方位满足不同人群的多样化需求。</p>
+                    </div>
+                </div>
+                
+                <div class="flex">
+                    <div class="mr-6 flex-shrink-0">
+                        <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold text-xl">2</div>
+                    </div>
+                    <div>
+                        <h3 class="font-serif text-xl font-bold mb-3">推动非遗文化传承与创新推广</h3>
+                        <p>依托多元展示、体验及互动形式，弘扬优秀传统文化，提升区域文化软实力。</p>
+                    </div>
+                </div>
+                
+                <div class="flex">
+                    <div class="mr-6 flex-shrink-0">
+                        <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold text-xl">3</div>
+                    </div>
+                    <div>
+                        <h3 class="font-serif text-xl font-bold mb-3">提供一站式便捷服务体验</h3>
+                        <p>为旅客、游客、本地居民及上班族营造便捷高效的服务场景，实现各类需求一站式解决。</p>
+                    </div>
+                </div>
+                
+                <div class="flex">
+                    <div class="mr-6 flex-shrink-0">
+                        <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold text-xl">4</div>
+                    </div>
+                    <div>
+                        <h3 class="font-serif text-xl font-bold mb-3">塑造区域文化旅游新地标</h3>
+                        <p>充分依托周边富集的历史文化资源，打造独具特色的文化旅游目的地，增强区域吸引力。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 市场定位 -->
+    <section id="positioning" class="py-20 px-6 bg-white section-fade">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-[clamp(1.8rem,5vw,3rem)] font-bold mb-4">市场定位</h2>
+                <div class="w-24 h-1 bg-primary mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="bg-neutral rounded-xl overflow-hidden shadow-lg group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://picsum.photos/id/175/600/400" alt="文化传承与创新" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <i class="fa fa-paint-brush text-primary text-xl mr-3"></i>
+                            <h3 class="font-serif text-xl font-bold">文化传承与创新高地</h3>
+                        </div>
+                        <p>以非遗文化为核心驱动力，有机融合现代创意元素，构建独一无二的文化体验场景，让传统文化在新时代焕发新活力。</p>
+                    </div>
+                </div>
+                
+                <div class="bg-neutral rounded-xl overflow-hidden shadow-lg group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://picsum.photos/id/225/600/400" alt="一站式服务" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <i class="fa fa-concierge-bell text-primary text-xl mr-3"></i>
+                            <h3 class="font-serif text-xl font-bold">一站式服务标杆</h3>
+                        </div>
+                        <p>涵盖餐饮、住宿、商务、旅游等全维度服务，致力于成为满足多元客群需求的典范，让每位到访者感受贴心周到的服务体验。</p>
+                    </div>
+                </div>
+                
+                <div class="bg-neutral rounded-xl overflow-hidden shadow-lg group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://picsum.photos/id/304/600/400" alt="区域文化旅游地标" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <i class="fa fa-map-marker text-primary text-xl mr-3"></i>
+                            <h3 class="font-serif text-xl font-bold">区域文化旅游地标</h3>
+                        </div>
+                        <p>依托周边丰富的历史文化资源，打造特色鲜明的文化旅游目的地，成为区域文化旅游的亮丽名片。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 主要项目内容 -->
+    <section id="projects" class="py-20 px-6 bg-neutral section-fade">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-[clamp(1.8rem,5vw,3rem)] font-bold mb-4">主要项目内容</h2>
+                <div class="w-24 h-1 bg-primary mx-auto"></div>
+            </div>
+            
+            <!-- 项目标签页导航 -->
+            <div class="flex flex-wrap justify-center mb-12 gap-2">
+                <button class="project-tab active px-6 py-2 rounded-full bg-primary text-white font-medium" data-tab="heritage">非遗文化项目</button>
+                <button class="project-tab px-6 py-2 rounded-full bg-white text-dark font-medium hover:bg-primary/10 transition-colors" data-tab="food">餐饮项目</button>
+                <button class="project-tab px-6 py-2 rounded-full bg-white text-dark font-medium hover:bg-primary/10 transition-colors" data-tab="hotel">酒店住宿项目</button>
+                <button class="project-tab px-6 py-2 rounded-full bg-white text-dark font-medium hover:bg-primary/10 transition-colors" data-tab="charging">充电桩项目</button>
+                <button class="project-tab px-6 py-2 rounded-full bg-white text-dark font-medium hover:bg-primary/10 transition-colors" data-tab="office">办公区超市项目</button>
+                <button class="project-tab px-6 py-2 rounded-full bg-white text-dark font-medium hover:bg-primary/10 transition-colors" data-tab="garden">云间花境旅游项目</button>
+                <button class="project-tab px-6 py-2 rounded-full bg-white text-dark font-medium hover:bg-primary/10 transition-colors" data-tab="business">一楼大厅商务中心项目</button>
+            </div>
+            
+            <!-- 项目内容 -->
+            <div class="project-content max-w-5xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
+                <!-- 非遗文化项目 -->
+                <div id="heritage" class="project-panel active">
+                    <div class="grid grid-cols-1 md:grid-cols-2">
+                        <div class="p-8 md:p-10">
+                            <h3 class="font-serif text-2xl font-bold mb-4 text-primary">非遗文化项目</h3>
+                            <ul class="space-y-4">
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-secondary mt-1 mr-3"></i>
+                                    <span>设立非遗文化展示馆，系统展示各类非遗工艺品，深度解读其历史渊源与精湛制作技艺</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-secondary mt-1 mr-3"></i>
+                                    <span>规划非遗工艺互动体验区，邀请游客参与制作过程，直观感受非遗独特韵味</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-secondary mt-1 mr-3"></i>
+                                    <span>定期举办非遗文化讲座、表演及展览，营造浓厚文化氛围</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="bg-neutral">
+                            <img src="https://picsum.photos/id/116/800/600" alt="非遗文化展示" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 餐饮项目 -->
+                <div id="food" class="project-panel hidden">
+                    <div class="grid grid-cols-1 md:grid-cols-2">
+                        <div class="p-8 md:p-10">
+                            <h3 class="font-serif text-2xl font-bold mb-4 text-primary">餐饮项目</h3>
+                            <ul class="space-y-4">
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-secondary mt-1 mr-3"></i>
+                                    <span>特色餐厅提供本地特色美食与非遗主题餐饮</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-secondary mt-1 mr-3"></i>
+                                    <span>提供对内及对外的自助早餐服务</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-secondary mt-1 mr-3"></i>
+                                    <span>与周边旅行社合作，提供定制化团队餐饮服务</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-secondary mt-1 mr-3"></i>
+                                    <span>每周推出定制私房精品套餐，满足高端客户需求</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-secondary mt-1 mr-3"></i>
+                                    <span>设有咖啡厅，提供休闲饮品与简餐</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="bg-neutral">
+                            <img src="https://picsum.photos/id/292/800/600" alt="特色餐饮" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 酒店住宿项目 -->
+                <div id="hotel" class="project-panel hidden">
+                    <div class="grid grid-cols-1 md:grid-cols-2">
+                        <div class="p-8 md:p-10">
+                            <h3 class="font-serif text-2xl font-bold mb-4 text-primary">酒店住宿项目</h3>
+                            <ul class="space-y-4">
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-secondary mt-1 mr-3"></i>
+                                    <span>配备25间精品酒店客房，定价160元/间</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-secondary mt-1 mr-3"></i>
+                                    <span>结合非遗文化元素，精心打造非遗特色主题客房</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-secondary mt-1 mr-3"></i>
+                                    <span>为宾客提供舒适住宿服务与温馨环境，提升文化体验感</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="bg-neutral">
+                            <img src="https://picsum.photos/id/437/800/600" alt="精品酒店客房" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 充电桩项目 -->
+                <div id="charging" class="project-panel hidden">
+                    <div class="grid grid-cols-1 md:grid-cols-2">
+                        <div class="p-8 md:p-10">
+                            <h3 class="font-serif text-2xl font-bold mb-4 text-primary">充电桩项目</h3>
+                            <ul class="space-y-4">
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-secondary mt-1 mr-3"></i>
+                                    <span>建设20个快速充电车位，为电动车用户提供便捷高效的充电服务</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-secondary mt-1 mr-3"></i>
+                                    <span>配套建设停车区，便于电动车用户停车充电，提升服务便利性</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="bg-neutral">
+                            <img src="https://picsum.photos/id/1072/800/600" alt="充电桩设施" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 办公区超市项目 -->
+                <div id="office" class="project-panel hidden">
+                    <div class="grid grid-cols-1 md:grid-cols-2">
+                        <div class="p-8 md:p-10">
+                            <h3 class="font-serif text-2xl font-bold mb-4 text-primary">办公区超市项目</h3>
+                            <ul class="space-y-4">
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-secondary mt-1 mr-3"></i>
+                                    <span>为上班族提供日常用品、食品、饮料等商品</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-secondary mt-1 mr-3"></i>
+                                    <span>提供快递、打印、复印等办公及生活服务</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-secondary mt-1 mr-3"></i>
+                                    <span>全面提升办公便利性，让上班族的工作生活更高效便捷</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="bg-neutral">
+                            <img src="https://picsum.photos/id/42/800/600" alt="办公区超市" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 云间花境旅游项目 -->
+                <div id="garden" class="project-panel hidden">
+                    <div class="grid grid-cols-1 md:grid-cols-2">
+                        <div class="p-8 md:p-10">
+                            <h3 class="font-serif text-2xl font-bold mb-4 text-primary">云间花境旅游项目</h3>
+                            <ul class="space-y-4">
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-secondary mt-1 mr-3"></i>
+                                    <span>打造花卉主题园区，设置花卉展览、园艺展示等内容</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-secondary mt-1 mr-3"></i>
+                                    <span>设立中药养生主题板块，提供养生咨询建议等服务</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-secondary mt-1 mr-3"></i>
+                                    <span>配备休闲娱乐区，包含咖啡厅、餐厅、儿童游乐区等</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-secondary mt-1 mr-3"></i>
+                                    <span>新增低空旅游飞行体验项目，提供独特的空中游览感受</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-secondary mt-1 mr-3"></i>
+                                    <span>开发低空无人机项目，构建多元盈利模型</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="bg-neutral">
+                            <img src="https://picsum.photos/id/110/800/600" alt="云间花境旅游区" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 一楼大厅商务中心项目 -->
+                <div id="business" class="project-panel hidden">
+                    <div class="grid grid-cols-1 md:grid-cols-2">
+                        <div class="p-8 md:p-10">
+                            <h3 class="font-serif text-2xl font-bold mb-4 text-primary">一楼大厅商务中心项目</h3>
+                            <ul class="space-y-4">
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-secondary mt-1 mr-3"></i>
+                                    <span>提供机票预订、办公服务、商务咨询等服务</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-secondary mt-1 mr-3"></i>
+                                    <span>配套提供打印、复印、传真等办公服务</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-secondary mt-1 mr-3"></i>
+                                    <span>完善商务配套设施，为商务活动顺利开展提供有力支撑</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="bg-neutral">
+                            <img src="https://picsum.photos/id/180/800/600" alt="商务中心" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 周边旅游资源 -->
+    <section id="surroundings" class="py-20 px-6 bg-white section-fade">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-[clamp(1.8rem,5vw,3rem)] font-bold mb-4">周边旅游资源整合</h2>
+                <div class="w-24 h-1 bg-primary mx-auto"></div>
+                <p class="mt-6 text-lg max-w-3xl mx-auto">
+                    项目周边富集多元历史文化资源，秦颐园文旅综合体积极整合资源，精心设计多元文化旅游线路，为游客提供一站式旅游服务
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- 文化体验线路 -->
+                <div class="rounded-lg overflow-hidden shadow-md group hover:shadow-xl transition-all duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://picsum.photos/id/302/600/400" alt="文化体验线路" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 bg-neutral">
+                        <h3 class="font-serif text-xl font-bold mb-3 flex items-center">
+                            <i class="fa fa-history text-primary mr-2"></i>
+                            文化体验线路
+                        </h3>
+                        <p class="mb-4">串联上官婉儿墓、唐顺陵、铁塔寺等历史文化景点，让游客在游览中感受历史的厚重与岁月沧桑。</p>
+                    </div>
+                </div>
+                
+                <!-- 美食品酒线路 -->
+                <div class="rounded-lg overflow-hidden shadow-md group hover:shadow-xl transition-all duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://picsum.photos/id/287/600/400" alt="美食品酒线路" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 bg-neutral">
+                        <h3 class="font-serif text-xl font-bold mb-3 flex items-center">
+                            <i class="fa fa-glass text-primary mr-2"></i>
+                            美食品酒线路
+                        </h3>
+                        <p class="mb-4">融合解百纳酒庄参观及品酒体验，开启味蕾与文化的双重盛宴，让人们在品味美酒中了解酒文化内涵。</p>
+                    </div>
+                </div>
+                
+                <!-- 自然景观线路 -->
+                <div class="rounded-lg overflow-hidden shadow-md group hover:shadow-xl transition-all duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://picsum.photos/id/131/600/400" alt="自然景观线路" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 bg-neutral">
+                        <h3 class="font-serif text-xl font-bold mb-3 flex items-center">
+                            <i class="fa fa-tree text-primary mr-2"></i>
+                            自然景观线路
+                        </h3>
+                        <p class="mb-4">聚焦泾渭分明自然景观游览，领略大自然的鬼斧神工，感受自然的神奇壮美。</p>
+                    </div>
+                </div>
+                
+                <!-- 历史文化线路 -->
+                <div class="rounded-lg overflow-hidden shadow-md group hover:shadow-xl transition-all duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://picsum.photos/id/301/600/400" alt="历史文化线路" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 bg-neutral">
+                        <h3 class="font-serif text-xl font-bold mb-3 flex items-center">
+                            <i class="fa fa-university text-primary mr-2"></i>
+                            历史文化线路
+                        </h3>
+                        <p class="mb-4">深入汉阳陵博物馆参观，探寻古代文明奥秘，溯源历史文化发展脉络。</p>
+                    </div>
+                </div>
+                
+                <!-- 航空文化体验 -->
+                <div class="rounded-lg overflow-hidden shadow-md group hover:shadow-xl transition-all duration-300 md:col-span-2 lg:col-span-1">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://picsum.photos/id/1059/600/400" alt="航空文化体验" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 bg-neutral">
+                        <h3 class="font-serif text-xl font-bold mb-3 flex items-center">
+                            <i class="fa fa-plane text-primary mr-2"></i>
+                            航空文化体验
+                        </h3>
+                        <p class="mb-4">走进咸阳机场T5博物馆，开展航空文化体验活动，感受现代航空魅力，了解航空事业发展历程。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white py-12 px-6">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-6">
+                        <i class="fa fa-map-marker text-secondary text-2xl"></i>
+                        <span class="font-serif text-xl font-bold">秦颐园</span>
+                    </div>
+                    <p class="text-gray-400 mb-6">
+                        传承历史文化，融合现代生活，打造区域文旅新地标
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-secondary transition-colors">
+                            <i class="fa fa-weixin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-secondary transition-colors">
+                            <i class="fa fa-weibo text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-secondary transition-colors">
+                            <i class="fa fa-instagram text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6">快速链接</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#overview" class="text-gray-400 hover:text-secondary transition-colors">项目概述</a></li>
+                        <li><a href="#goals" class="text-gray-400 hover:text-secondary transition-colors">核心目标</a></li>
+                        <li><a href="#positioning" class="text-gray-400 hover:text-secondary transition-colors">市场定位</a></li>
+                        <li><a href="#projects" class="text-gray-400 hover:text-secondary transition-colors">主要项目</a></li>
+                        <li><a href="#surroundings" class="text-gray-400 hover:text-secondary transition-colors">周边资源</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6">联系我们</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fa fa-map-marker text-secondary mt-1 mr-3"></i>
+                            <span class="text-gray-400">陕西省西安市秦颐园文旅综合体</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-phone text-secondary mt-1 mr-3"></i>
+                            <span class="text-gray-400">+18991019887</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-envelope text-secondary mt-1 mr-3"></i>
+                            <span class="text-gray-400">info@qinyiyuan.com</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6">营业时间</h4>
+                    <ul class="space-y-3">
+                        <li class="flex justify-between">
+                            <span class="text-gray-400">周一至周五</span>
+                            <span class="text-gray-400">09:00 - 21:00</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span class="text-gray-400">周六至周日</span>
+                            <span class="text-gray-400">08:30 - 22:00</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span class="text-gray-400">法定节假日</span>
+                            <span class="text-gray-400">08:00 - 22:30</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500">
+                <p>&copy; 2023 秦颐园文旅综合体 版权所有</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 导航栏滚动效果
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-dark');
+                navbar.classList.remove('bg-transparent');
+            } else {
+                navbar.classList.remove('bg-dark');
+            }
+        });
+        
+        // 移动端菜单切换
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // 项目标签页切换
+        const projectTabs = document.querySelectorAll('.project-tab');
+        const projectPanels = document.querySelectorAll('.project-panel');
+        
+        projectTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // 移除所有标签页的活跃状态
+                projectTabs.forEach(t => {
+                    t.classList.remove('active', 'bg-primary', 'text-white');
+                    t.classList.add('bg-white', 'text-dark', 'hover:bg-primary/10');
+                });
+                
+                // 添加当前标签页的活跃状态
+                tab.classList.add('active', 'bg-primary', 'text-white');
+                tab.classList.remove('bg-white', 'text-dark', 'hover:bg-primary/10');
+                
+                // 隐藏所有面板
+                projectPanels.forEach(panel => {
+                    panel.classList.add('hidden');
+                    panel.classList.remove('active');
+                });
+                
+                // 显示对应的面板
+                const targetPanel = document.getElementById(tab.dataset.tab);
+                targetPanel.classList.remove('hidden');
+                targetPanel.classList.add('active');
+            });
+        });
+        
+        // 滚动动画
+        function checkFade() {
+            const fadeElements = document.querySelectorAll('.section-fade');
+            const windowHeight = window.innerHeight;
+            
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    element.classList.add('active');
+                }
+            });
+        }
+        
+        // 初始检查和滚动时检查
+        window.addEventListener('scroll', checkFade);
+        window.addEventListener('load', checkFade);
+        
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                // 关闭移动端菜单（如果打开）
+                document.getElementById('mobile-menu').classList.add('hidden');
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
